@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $genre = $_POST['genre'];
   $releaseDate = $_POST['releaseDate'];
   
-  // Process image file
+  // image file
   $image = $_FILES['image'];
   $imageFileName = $image['name'];
   $imageTmpName = $image['tmp_name'];
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $targetFilePath = $targetDirectory . uniqid() . '.' . $imageFileType; 
   move_uploaded_file($imageTmpName, $targetFilePath);
 
-  // Process APK file
+  //APK file
   $apk = $_FILES['apk'];
   $apkFileName = $apk['name'];
   $apkTmpName = $apk['tmp_name'];

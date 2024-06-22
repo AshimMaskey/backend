@@ -19,14 +19,12 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     require_once "../dbconnect.php";
 	$sql = "INSERT INTO users (username, email, date_of_birth, phone, password) VALUES ('$username', '$email', '$dob', '$phone', '$password')";
 
-    // Execute SQL query
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-
-    // Close connection
+    
     $conn->close();
 }
 ?>

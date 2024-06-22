@@ -25,8 +25,6 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 			} else {
 				echo "Error: " . $sql . "<br>" . $conn->error;
 			}
-
-			// Close connection
 			$conn->close();
 		}else{
 				echo "there was error uploading file";

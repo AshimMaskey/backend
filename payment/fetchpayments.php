@@ -4,15 +4,15 @@ require_once "../dbconnect.php";
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
-$sql = "SELECT * FROM news";
+$sql = "SELECT * FROM payments";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    $newsData = array();
+    $paymentsData = array();
     while ($row = $result->fetch_assoc()) {
-        $newsData[] = $row;
+        $paymentsData[] = $row;
     }
-    echo json_encode($newsData);
+    echo json_encode($paymentsData);
 } else {
     echo json_encode(array());
 }

@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD']==='POST')
 	$admin_name=$values['admin_name'];
 	$password=$values['password'];
 
-	$query= "SELECT admin_id, admin_name, password FROM admin WHERE admin_name='$admin_name' LIMIT 1";
+	$query= "SELECT * FROM admin WHERE admin_name='$admin_name' LIMIT 1";
 
 	$result = mysqli_query($conn, $query);
 
@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD']==='POST')
 		$row=mysqli_fetch_assoc($result);
 		if($row['password']===$password){
 			header('Content-Type:application/json');
-			echo json_encode(array('success' => true));
+			echo json_encode(array('success' => true, 'admin'=>$row));
             exit();
 		}else{
 			header('Content-Type:application/json');

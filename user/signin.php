@@ -34,12 +34,12 @@ if($_SERVER['REQUEST_METHOD']==='POST')
             exit();
         } else {
             header('Content-Type:application/json');
-            echo json_encode(array('success' => false, 'message' => 'Invalid password'));
+            echo json_encode(array('success' => false, 'message' => 'Invalid username or password'));
             exit();
         }
     } else {
         header('Content-Type:application/json');
-        echo json_encode(array('success' => false, 'message' => 'User not found'));
+        echo json_encode(array('success' => false, 'message' => 'Invalid username or password'));
         exit();
     }
 

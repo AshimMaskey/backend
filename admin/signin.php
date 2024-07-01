@@ -25,12 +25,12 @@ if($_SERVER['REQUEST_METHOD']==='POST')
             exit();
 		}else{
 			header('Content-Type:application/json');
-			echo json_encode(array('success'=>false, 'message'=>'Invalid password'));
+			echo json_encode(array('success'=>false, 'message'=>'Invalid admin name or password'));
 		}
 	}
 	else{
 		header('Content-Type:application/json');
-		echo json_encode(array('success'=>false, 'message'=>'Admin not found'));
+		echo json_encode(array('success'=>false, 'message'=>'Invalid admin name or password'));
 	}
 
 	mysqli_free_result($result);
